@@ -120,7 +120,7 @@ CHANGELOG.md
 README.md
 ```
 
-## License and credit
+## Credit
 
 Copyright (C) 2026 AtanuDebbarma.
 
