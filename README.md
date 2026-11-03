@@ -124,8 +124,7 @@ README.md
 
 Copyright (C) 2026 AtanuDebbarma.
 
-Based on **Manage Remote Companions** by **RadthorDax**:  
-https://www.nexusmods.com/mountandblade2bannerlord/mods/698
+Based on **[Manage Remote Companions](https://www.nexusmods.com/mountandblade2bannerlord/mods/698)** by **[RadthorDax](https://www.nexusmods.com/profile/RadthorDax?gameId=3174)**
 
 Manage Remote Companions Fix is free software under the [GNU General Public License v3.0](LICENSE), with attribution terms in [NOTICE](NOTICE).
 
