@@ -2,7 +2,7 @@
 
 A Mount & Blade II: Bannerlord mod that lets you manage remote clan companions and adult family from Inventory and Character Developer, and manage troops of companion parties, caravans, and settlement garrisons from Clan > Parties.
 
-**Source:** [ManageRemoteCompanionsFixed on GitHub](https://github.com/AtanuDebbarma/ManageRemoteCompanionsFixed)
+**Nexus Mods URL:** <https://www.nexusmods.com/mountandblade2bannerlord/mods/14470>.
 
 ## Credit to the original
 
