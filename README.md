@@ -6,14 +6,12 @@ A Mount & Blade II: Bannerlord mod that lets you manage remote clan companions a
 
 ## Credit to the original
 
-This is a **1.4.8 fix / continuation** of **[Manage Remote Companions](https://www.nexusmods.com/mountandblade2bannerlord/mods/698)** by **[RadthorDax](https://www.nexusmods.com/profile/RadthorDax?gameId=3174)**. Full credit to RadthorDax for the original mod.
-
-The game module id remains `ManageRemoteCompanionsFix`. The GitHub repository is named **ManageRemoteCompanionsFixed**.
+This is a fix / continuation of **[Manage Remote Companions](https://www.nexusmods.com/mountandblade2bannerlord/mods/698)** by **[RadthorDax](https://www.nexusmods.com/profile/RadthorDax?gameId=3174)**. Full credit to RadthorDax for the original mod. Current package targets Bannerlord **1.5.7** / War Sails **1.3.7** (module id still `ManageRemoteCompanionsFix`; GitHub repo **ManageRemoteCompanionsFixed**).
 
 ### What this fix changes
 
-- Ports the idea to Bannerlord **1.4.8** with current APIs (`PartyScreenHelper`, MCM v5, UIExtenderEx 3).
-- Replaces the old **experimental** behaviour (clicking a party opened troop management and blocked the right-panel UI) with a dedicated **Manage Troops** button beside the party name.
+- Ports the idea to current Bannerlord APIs (`PartyScreenHelper`, MCM v5, UIExtenderEx 3).
+- Replaces the old **experimental** behaviour (clicking a party opened troop management and blocked the right-panel UI) with a dedicated **Manage Troops** button on Clan > Parties.
 - Keeps remote **Manage Equipment** and **Character Upgrades** for companions and adult clan family.
 
 ## Features
@@ -46,17 +44,17 @@ Turn **Manage Settlement Garrisons** on when you own a castle or town and want C
 
 | Dependency | Tested version | Expected to work with |
 |---|---|---|
-| Mount & Blade II: Bannerlord | 1.4.8 | 1.4.x and 1.5.x (not officially supported) |
-| War Sails (NavalDLC), optional | 1.2.8 | 1.2.x |
+| Mount & Blade II: Bannerlord | 1.5.7 | 1.5.x |
+| War Sails (NavalDLC), optional | 1.3.7 | 1.3.x |
 | [Harmony][harmony] | 2.4.2 | 2.x |
 | [UIExtenderEx][uiextenderex] | 3.0.3 | 3.x |
 | [Mod Configuration Menu v5 (MCM)][mcm] | 5.13.1 | 5.x |
 
-**Tested and works with Bannerlord 1.4.8.** Expected to work with **1.4.x** and **1.5.x**, but those are **not officially supported**.
+**Tested with Bannerlord 1.5.7 / War Sails 1.3.7.**
 
 This mod needs [Harmony][harmony], [UIExtenderEx][uiextenderex], and [MCM][mcm] directly. [MCM][mcm] also needs [ButterLib][butterlib] in a normal install.
 
-War Sails is not required. With War Sails, the Clan Parties button still targets the shared `HeroNameParent` row. Fleet management stays in the Port UI and is out of scope.
+War Sails is not required. On 1.5.7 the Manage Troops control inserts into `PartiesRightPanelControls` (SandBox and NavalDLC). Fleet management stays in the Port UI and is out of scope.
 
 ## Compatibility
 

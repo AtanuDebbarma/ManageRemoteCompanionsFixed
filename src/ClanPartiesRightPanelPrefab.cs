@@ -3,9 +3,9 @@ using Bannerlord.UIExtenderEx.Prefabs2;
 
 namespace ManageRemoteCompanionsFix
 {
-    // Inserts Manage Troops beside Change Leader inside HeroNameParent (SandBox + NavalDLC).
-    // Must use Child (not Append): Append would insert a stretched sibling under the name row.
-    [PrefabExtension("ClanPartiesRightPanel", "descendant::ListPanel[@Id='HeroNameParent']/Children")]
+    // Bannerlord 1.5.7 / War Sails 1.3.7: ClanPartiesRightPanel no longer has HeroNameParent.
+    // Insert Manage Troops at the top of PartiesRightPanelControls (present in SandBox and NavalDLC).
+    [PrefabExtension("ClanPartiesRightPanel", "descendant::ListPanel[@Id='PartiesRightPanelControls']/Children")]
     internal sealed class ClanPartiesRightPanelPrefab : PrefabExtensionInsertPatch
     {
         public override InsertType Type
@@ -13,10 +13,9 @@ namespace ManageRemoteCompanionsFix
             get { return InsertType.Child; }
         }
 
-        // After Name TextWidget (0) and Change Leader wrapper (1).
         public override int Index
         {
-            get { return 2; }
+            get { return 0; }
         }
 
         [PrefabExtensionText]
@@ -24,20 +23,24 @@ namespace ManageRemoteCompanionsFix
         {
             get
             {
-                // Same action-button look as Kingdom Manage/Disband (ButtonBrush2, 227x40).
                 return
+                    "<ListPanel Id=\"ManageTroopsParent\" WidthSizePolicy=\"Fixed\" HeightSizePolicy=\"Fixed\" " +
+                    "SuggestedWidth=\"335\" SuggestedHeight=\"40\" HorizontalAlignment=\"Center\" MarginTop=\"10\" " +
+                    "UpdateChildrenStates=\"true\" IsVisible=\"@IsManageTroopsVisible\">" +
+                    "<Children>" +
                     "<ButtonWidget Id=\"ManageTroopsButton\" DoNotPassEventsToChildren=\"true\" UpdateChildrenStates=\"true\" " +
-                    "WidthSizePolicy=\"Fixed\" HeightSizePolicy=\"Fixed\" SuggestedWidth=\"160\" SuggestedHeight=\"40\" " +
-                    "VerticalAlignment=\"Center\" MarginLeft=\"12\" Brush=\"ButtonBrush2\" " +
-                    "Command.Click=\"ExecuteManageTroops\" IsVisible=\"@IsManageTroopsVisible\" IsEnabled=\"@IsManageTroopsEnabled\" " +
-                    "GamepadNavigationIndex=\"1\">" +
+                    "WidthSizePolicy=\"StretchToParent\" HeightSizePolicy=\"StretchToParent\" " +
+                    "Brush=\"ButtonBrush2\" Command.Click=\"ExecuteManageTroops\" IsEnabled=\"@IsManageTroopsEnabled\" " +
+                    "GamepadNavigationIndex=\"0\">" +
                     "<Children>" +
                     "<TextWidget WidthSizePolicy=\"StretchToParent\" HeightSizePolicy=\"StretchToParent\" " +
                     "Brush=\"Kingdom.GeneralButtons.Text\" Text=\"@ManageTroopsText\" />" +
                     "<HintWidget DataSource=\"{ManageTroopsHint}\" WidthSizePolicy=\"StretchToParent\" HeightSizePolicy=\"StretchToParent\" " +
                     "Command.HoverBegin=\"ExecuteBeginHint\" Command.HoverEnd=\"ExecuteEndHint\" IsDisabled=\"true\" />" +
                     "</Children>" +
-                    "</ButtonWidget>";
+                    "</ButtonWidget>" +
+                    "</Children>" +
+                    "</ListPanel>";
             }
         }
     }
